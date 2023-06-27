@@ -57,10 +57,11 @@ export class ProductsComponent implements OnInit {
       }
     )
   }
-  editProduct(){
-    this.selectedProduct = {title:'', price:0, description:''};
-  }
-  
+  editProduct(product: ProductModel) {
+        this.selectedProduct = { title: '', price: 0, description: '' };
+  }
+    
+    
   deleteProduct(id: ProductModel['id']){
     this.productService.destroy(id).subscribe(
       response =>{
